@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title%}
+edit tweet
+{% endblock %}
+{% block body%}
+<h1>edit tweet ::</h1>
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+        <button class="bg-danger" type="submit">submit </button>
+</form>
+{% endblock %}
