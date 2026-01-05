@@ -25,4 +25,5 @@ urlpatterns = [
     path('',views.home,name='base'),
     path('myapp/', include('myapp.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('search/',views.search,name='search')
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT )
