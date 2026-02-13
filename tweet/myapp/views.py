@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import tweet
 from .forms import login,create_user
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 
@@ -54,3 +55,4 @@ def register(request):
     else:
         form=create_user()
     return render(request,'registration/register.html',{'form':form})
+

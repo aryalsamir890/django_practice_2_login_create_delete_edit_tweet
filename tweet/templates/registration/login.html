@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title%}
 login page 
 {% endblock %}
 {% block body%}
-<form method="POST">
+
+<form method="POST" >
     {%csrf_token%}
-    {{form.as_p}}
+    <div class="container">
+        <h1>login</h1>
+        <hr>
+    <label for="{{form.username.id_for_label}}">username:</label>
+    <input type="text" id="{{form.username.id_for_label}}" placeholder="your username" name="{{form.username.name}}" value="{{form.username.value|default_if_none:''}}" />
+    <span class="text-danger">{{form.username.errors}} </span>
+
+    <label for="{{form.password.id_for_label}}">password</label>
+    <input type="text" id="{{form.password.id_for_label}}" placeholder="your password" name="{{form.password.name}}" />
+    <span class="text-danger">{{form.password.errors}} </span>
+
     <button type="submit">login</button>
+    </div>
 </form>
 <h3>donot have an account?<a href="{%url 'register'%}">register</a></h3>
 

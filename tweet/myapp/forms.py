@@ -1,7 +1,7 @@
 from django import forms
 from .models import tweet
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 
 
 class login(forms.ModelForm):
@@ -13,5 +13,6 @@ class login(forms.ModelForm):
 class create_user(UserCreationForm):
     class Meta:
         model=User
-        fields=('username','password1','password2')
+        fields=('username','first_name','email','password1','password2')
+
 
