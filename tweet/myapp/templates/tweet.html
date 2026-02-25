@@ -5,6 +5,12 @@ my app
 
 {% block body %}
 <a href="{% url 'create' %}" class="btn btn-danger m-5">create tweet</a>
+<a href="{% url 'mail' %}" class="btn btn-danger m-5">send mail</a>
+{% if result%}
+    <a href="{%url 'results' result.id%}" class="btn btn-danger m-5"> show the result 
+    </a>
+    {%endif %}
+
 
 {%if user.is_authenticated%}
 <form method="POST" action="{%url 'logout'%}">

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>celery setup</title>
+</head>
+<body>
+    {% if result%}
+    <h1>id:{{result.task_id}}</h1>
+    <h1>result:{{result.result}}</h1>
+    <h1>status:{{result.status}}</h1>
+    <h1>state:{{result.state}}</h1>
+    <h1>backend :{{result.backend}}</h1>
+    {%endif %}
+</body>
+</html>

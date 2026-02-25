@@ -1,9 +1,18 @@
 from django.shortcuts import render,redirect
 from .models import tweet
+from django.contrib.auth.models import User
 from .forms import login,create_user
-from django.contrib import messages
+from django.template.loader import render_to_string
+from django.http import HttpResponse,JsonResponse
+from django.utils.html import strip_tags
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
+from django.core.cache import cache
+from django_ratelimit.decorators import ratelimit
+from .tasks import add,mul
+from celery.result import AsyncResult
+
 
 def home(request):
     return render(request,'index.html',{'name':'samir'}) 
@@ -56,3 +65,49 @@ def register(request):
         form=create_user()
     return render(request,'registration/register.html',{'form':form})
 
+def mail_to_be_sent(request):
+    subject = 'this is our welcome mail'
+    html_content=render_to_string('email.html',{'name':"samir","otp_code":"978645"})
+    plain_text=strip_tags(html_content)
+    message=plain_text
+    recipient_list=['aryalsamir629@gmail.com']
+
+    send_mail(
+        subject,
+        message,
+        None,
+        recipient_list,
+        html_message=html_content
+    )
+    return HttpResponse("Mail actually sent!")
+
+def redis(request):
+    list=[] 
+    if cache.get('details',default=None):
+         list=cache.get('details')
+         db='redis'
+
+    else:
+        data=User.objects.all()
+        for i in data:
+            list.append(i.username)
+            db='sqlite'
+
+            cache.set('details',list,timeout=20)
+        
+    return JsonResponse({'data':list,'dbname':db,'status':200})
+
+@ratelimit(key='user_or_ip',rate='5/m',block=False)
+def rate_limit(request):
+    if request.limited==True:
+        return JsonResponse({'status':200,'result':"too many tries"})
+    return JsonResponse({'status':200,'result':"sucess"})
+
+
+def celery(request):
+    result=mul.apply_async(args=[2,5])
+    return render(request,'tweet.html',{'result':result})
+    
+def results(request,id):
+    result=AsyncResult(id)
+    return render(request,'celery.html',{'result':result})

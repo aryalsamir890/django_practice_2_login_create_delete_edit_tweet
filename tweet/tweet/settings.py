@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    'myapp.apps.MyappConfig',
 ]
 
 MIDDLEWARE = [
@@ -100,13 +100,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kathmandu'
 
 USE_I18N = True
 
@@ -126,3 +136,20 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 LOGIN_URL='/accounts/login'
 LOGIN_REDIRECT_URL='/myapp/'
 LOGOUT_REDIRECT_URL='/myapp/'
+
+
+# email setup settings 
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp-relay.brevo.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+
+EMAIL_HOST_USER='8985d6001@smtp-brevo.com'
+EMAIL_HOST_PASSWORD='xsmtpsib-bc6657cf89390796d7bfedaaf2c30579eddd8b9bdd67c303119eb50682b196c6-Dtg1hLV7F6BsixMj'
+DEFAULT_FROM_EMAIL = 'admin@aryalsamir2064.com.np'
+
+
+# celert settings 
+CELERY_TIMEZONE='Asia/Kathmandu'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND='redis://localhost:6379/0'
