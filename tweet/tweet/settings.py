@@ -153,3 +153,109 @@ DEFAULT_FROM_EMAIL = 'admin@aryalsamir2064.com.np'
 CELERY_TIMEZONE='Asia/Kathmandu'
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND='redis://localhost:6379/0'
+
+import os
+DEBUG = True
+
+
+LOGGING = {
+    "version": 1,
+
+    # Disable default loggers depending on DEBUG
+    "disable_existing_loggers": False,
+
+    # -------------------------
+    # FORMATTERS
+    # -------------------------
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(asctime)s %(module)s %(lineno)d %(message)s",
+        },
+        "simple": {
+            "format": "%(levelname)s %(asctime)s %(module)s %(funcName)s %(lineno)d %(message)s",
+        },
+    },
+
+    # -------------------------
+    # FILTERS
+    # -------------------------
+    "filters": {
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+
+    # -------------------------
+    # HANDLERS
+    # -------------------------
+    "handlers": {
+
+        # Console Output
+        "console": {
+            "level": "DEBUG" if DEBUG else "INFO",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+
+        # INFO Log File (Rotating)
+        "info": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "log/info.log"),
+            "maxBytes": 1024 * 1024 * 300,  # 300MB
+            "backupCount": 10,
+            "formatter": "verbose",
+            "encoding": "utf-8",
+        },
+
+        # Demo Log (Rotating)
+        "demo": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "log/demo.log"),
+            "maxBytes": 1024 * 1024 * 50,  # 50MB
+            "backupCount": 5,
+            "formatter": "verbose",
+            "encoding": "utf-8",
+        },
+
+        # City Log (Rotating)
+        "city": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "log/city.log"),
+            "maxBytes": 1024 * 1024 * 50,  # 50MB
+            "backupCount": 5,
+            "formatter": "verbose",
+            "encoding": "utf-8",
+        },
+    },
+
+    # -------------------------
+    # LOGGERS
+    # -------------------------
+    "loggers": {
+
+        # Default Django Logger
+        "django": {
+            "handlers": ["info", "console"],
+            "propagate": True,
+            "level": "INFO",
+        },
+
+        # Custom demo logger
+        "demo_log": {
+            "handlers": ["demo"],
+            "propagate": True,
+            "level": "INFO",
+        },
+
+        # Custom city logger
+        "city_log": {
+            "handlers": ["city"],
+            "propagate": True,
+            "level": "INFO",
+        },
+    },
+}

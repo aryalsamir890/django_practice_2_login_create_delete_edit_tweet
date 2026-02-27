@@ -12,12 +12,28 @@ from django.core.cache import cache
 from django_ratelimit.decorators import ratelimit
 from .tasks import add,mul
 from celery.result import AsyncResult
+import logging
+
+logger=logging.getLogger(__name__)
+logger_django=logging.getLogger('django')
+logger_demo=logging.getLogger('demo_log')
+logger_city=logging.getLogger('city_log')
 
 
-def home(request):
-    return render(request,'index.html',{'name':'samir'}) 
+
+# def home(request):
+
+#     logger.info("this is a info message")
+#     logger.error("this is a error message")
+#     logger_demo.error("this is a demo error  message")
+#     logger_city.info("this is a city info  message")
+#     return render(request,'index.html',{'name':'samir'}) 
 
 def show(request):
+    logger_django.info("this is a info message")
+    logger.error("this is a error message")
+    logger_demo.error("this is a demo error  message")
+    logger_city.info("this is a city info  message")
     tweets=tweet.objects.all().order_by('-created_at')
     return render(request,'tweet.html',{'tweets':tweets})
 

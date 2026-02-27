@@ -1,0 +1,9 @@
+INFO 2026-02-27 09:49:54,921 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-27 09:50:56,533 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-27 09:58:02,732 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\tweet\settings.py changed, reloading.
+INFO 2026-02-27 09:58:05,135 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-27 09:58:19,314 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-27 10:02:16,141 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\views.py changed, reloading.
+INFO 2026-02-27 10:02:18,320 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-27 10:03:01,988 views 33 this is a info message
+INFO 2026-02-27 10:03:02,080 log 249 "GET /myapp/ HTTP/1.1" 200 3525
