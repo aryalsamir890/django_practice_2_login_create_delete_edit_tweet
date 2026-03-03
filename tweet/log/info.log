@@ -7,3 +7,64 @@ INFO 2026-02-27 10:02:16,141 autoreload 265 C:\Users\User\OneDrive\Desktop\djang
 INFO 2026-02-27 10:02:18,320 autoreload 681 Watching for file changes with StatReloader
 INFO 2026-02-27 10:03:01,988 views 33 this is a info message
 INFO 2026-02-27 10:03:02,080 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 20:48:02,878 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 20:48:27,782 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\urls.py changed, reloading.
+INFO 2026-02-28 20:48:28,922 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 20:48:44,383 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\views.py changed, reloading.
+INFO 2026-02-28 20:48:45,712 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 20:48:51,895 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\urls.py changed, reloading.
+INFO 2026-02-28 20:48:53,032 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 20:48:58,470 views 34 this is a info message
+INFO 2026-02-28 20:48:58,627 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 20:49:05,225 log 249 "GET /myapp/scraper HTTP/1.1" 301 0
+INFO 2026-02-28 20:49:06,045 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 20:55:16,372 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 20:55:17,988 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 20:55:26,408 views 34 this is a info message
+INFO 2026-02-28 20:55:26,448 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 20:55:26,545 views 34 this is a info message
+INFO 2026-02-28 20:55:26,565 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 20:55:32,645 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 20:57:51,849 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 20:57:56,542 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 21:15:27,092 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:15:28,487 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:15:33,435 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 21:15:38,709 views 34 this is a info message
+INFO 2026-02-28 21:15:38,755 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:15:45,396 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 21:16:21,717 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:16:22,918 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:16:33,832 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:16:35,028 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:16:46,072 views 34 this is a info message
+INFO 2026-02-28 21:16:46,128 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:16:56,937 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 21:19:45,778 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:19:47,082 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:22:14,793 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:22:57,613 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:22:59,037 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:23:18,989 views 34 this is a info message
+INFO 2026-02-28 21:23:19,043 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:23:21,305 views 34 this is a info message
+INFO 2026-02-28 21:23:21,318 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:23:22,619 views 34 this is a info message
+INFO 2026-02-28 21:23:22,632 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:23:23,285 views 34 this is a info message
+INFO 2026-02-28 21:23:23,300 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:23:23,514 views 34 this is a info message
+INFO 2026-02-28 21:23:23,530 log 249 "GET /myapp/ HTTP/1.1" 200 3525
+INFO 2026-02-28 21:23:40,083 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157
+INFO 2026-02-28 21:25:03,016 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:25:05,579 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:25:26,039 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:25:27,485 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:26:16,383 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 3053
+INFO 2026-02-28 21:29:36,929 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:29:38,466 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:30:05,758 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:30:07,008 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:30:19,333 autoreload 265 C:\Users\User\OneDrive\Desktop\django_first_project\tweet\myapp\scraper.py changed, reloading.
+INFO 2026-02-28 21:30:20,601 autoreload 681 Watching for file changes with StatReloader
+INFO 2026-02-28 21:31:02,805 log 249 "GET /myapp/scraper/ HTTP/1.1" 200 157

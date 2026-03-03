@@ -12,3 +12,11 @@ class tweet(models.Model):
     
     def id(self):
         return self.name.id
+
+
+class products(models.Model):
+    product_name=models.CharField(max_length=100)
+    product_price=models.FloatField()
+    product_quantity=models.IntegerField()
+
+
